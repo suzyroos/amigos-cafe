@@ -114,20 +114,44 @@ body {
     margin-bottom: 30px;
 }
 
-/* Grid-layout för bilder */
+/* Bildgalleri - Fixad layout för dator */
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolumner */
+    grid-template-rows: auto;
+    gap: 20px; /* Mellanrum mellan bilderna */
     justify-content: center;
     align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-/* Individuella bilder */
-.gallery-item {
-    overflow: hidden;
+/* Specifik positionering av bilder */
+.gallery-item:nth-child(1) { grid-column: 1; grid-row: 1; }
+.gallery-item:nth-child(2) { grid-column: 2; grid-row: 1; }
+.gallery-item:nth-child(3) { grid-column: 3; grid-row: 1; }
+.gallery-item:nth-child(4) { grid-column: 1; grid-row: 2; }
+.gallery-item:nth-child(5) { 
+    grid-column: 2; 
+    grid-row: 2; 
+    justify-self: center; /* Centrerar loggan horisontellt */
+    align-self: center; /* Centrerar loggan vertikalt */
+}
+.gallery-item:nth-child(6) { grid-column: 3; grid-row: 2; }
+
+/* Justering av bilder */
+.gallery-img {
+    width: 100%;
+    height: auto;
+    display: block;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Anpassning för mobil */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: 1fr; /* Endast en kolumn i mobilvy */
+    }
 }
 
 /* Bilder */
