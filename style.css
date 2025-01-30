@@ -51,14 +51,6 @@ body {
     border-radius: 50%;
 }
 
-/* Anpassning för större skärmar */
-@media (min-width: 1024px) {
-    .logo-img {
-        width: 160px;
-        max-width: 180px;
-    }
-}
-
 /* === Menyboxar (fadead stil) === */
 .menu {
     background-color: rgba(74, 63, 53, 0.85); /* Mörkbrun, men mer genomskinlig */
