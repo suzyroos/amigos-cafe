@@ -1,190 +1,156 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amigo's Café Bar de Copas</title>
-    
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <!-- Anpassad CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amigo's Café Bar de Copas</title>
+  <meta name="description" content="Amigo's Café & Salladsbar i Eskilstuna – familjeägt café med internationella smaker.">
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <!-- Anpassad CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!--Navigering -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Amigo's Bar de Copas</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#menu">Meny</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Om oss</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
-                </ul>
-            </div>
+  <header>
+    <!-- Navigering med sticky-effekt -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Amigo's Bar de Copas</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Om oss</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="amigos_cafe_salladsbar_meny2025.pdf" target="_blank" rel="noopener noreferrer">Se Menyn</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Kontakt</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
+  </header>
 
-    <!--Huvudsektion -->
-    <div class="container text-center mt-5">
-        <img src="logo.png" alt="Amigo's Café Logo" class="logo-img">
+  <main>
+    <!-- Huvudsektion med logotyp -->
+    <section class="text-center mt-5">
+      <div class="container">
+        <img src="images/amigostransparent.png" alt="Amigo's Café Logo" class="logo-img" loading="lazy">
         <h1>Amigo's Café Sallads Bar</h1>
-    </div>
-
-    <!--Menysektion -->
-    <div class="container text-center" id="menu">
-        <h2 class="mt-5">Meny</h2>
-
-        <!-- Drycker -->
-        <div class="menu">
-            <h3>Drycker</h3>
-            <ul>
-                <li>Kaffe/Te – 25 kr <span class="desc">Ingår för alla våra ätande gäster</span></li>
-                <li>Läsk – 25 kr <span class="desc">Coca-Cola/zero, Fanta/exotic, Sprite, Ramlösa citrus/granatäpple </span></li>
-            </ul>
-        </div>
-
-        <!-- Ensaladas/Sallader -->
-        <div class="menu">
-            <h3>Sallader/Ensaladas</h3>
-            <ul>
-                <li>Salati Nigvzit / სალათი ნიგვზით – 110 kr <span class="desc">Färsk sallad med tomater, gurka, valnötter & färska kryddor</span></li>
-                <li>Amigo’s pasta sallad – 145 kr<span class="desc">Pasta, kyckling tärnor, sallads ost & avokado</span></li>
-                <li>Mix Sallad – 135 kr<span class="desc">Sallad, tomat, rödlök, kokt ägg, tonfisk & morot</span></li></li>
-                <li>Olivje – 140 kr<span class="desc">Potatis,majonnäs, gröna ärtor, saltgurka, kokt ägg (kan ätas med kyckling - korv & som vegetarisk)</span></li></li>
-            </ul>
-        </div>
-        
-        <!-- Smårätter/Pá picar -->
-         <div class="menu">
-            <h3>Smårätter/Pá picar</h3>
-            <ul>
-                <li>Vitlöksbröd – 45 kr<span class="desc">Basilika & olivolja</span></li></li>
-                <li>Pebré – 45 kr<span class="desc">Kryddig salsa sås, hackad tomat, lök, koriander, vitlök, chili och färska kryddor</span></li></li>
-                <li>Completo hotdog – 120 kr<span class="desc">Kyckling/vego korv i hembakad completobröd, med surkål,tärnad tomat, avokado, dressing</span></li></li>
-                <li>Khachapuri / ხაჭაპური – 130 kr <span class="desc">Georgiskt ostbröd med fyllning av mozarella och fetaost</span></li>
-            </ul>
-        </div>
-        <!-- Varmrätter -->
-        <div class="menu">
-            <h3>Varmrätter</h3>
-            <ul>
-                <li>Ostri – 170 kr <span class="desc">Nötköttgryta med tomatsås & paprika</span></li>
-                <li>Lobio – 140 kr <span class="desc">Vegansk böngryta med vitlök & koriander</span></li>
-            </ul>
-        </div>
-
-        <!-- Efterrätter -->
-        <div class="menu">
-            <h3>Efterrätter</h3>
-            <ul>
-                <li>Våffla med sylt & grädde – 45 kr</li>
-                <li>Glass med persika & grädde – 45 kr</li>
-            </ul>
-        </div>
-    </div>
+      </div>
+    </section>
 
     <!-- Bildgalleri -->
-    <div class="container mt-5" id="gallery">
-        <h2 class="section-title">Bienvenidos!</h2>
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="sallad.jpg" alt="Sallad" class="gallery-img">
-            </div>
-            <div class="gallery-item">
-                <img src="churasco.jpg" alt="Churasco" class="gallery-img">
-            </div>
-            <div class="gallery-item">
-                <img src="globio.jpg" alt="Lobio" class="gallery-img">
-            </div>
-            <div class="gallery-item">
-                <img src="khachapuri.jpg" alt="Khachapuri" class="gallery-img">
-            </div>
-            <div class="gallery-item">
-                <img src="amigo.png" alt="Amigo" class="gallery-img">
-            </div>
-            <div class="gallery-item">
-                <img src="sofia.jpg" alt="Sofia" class="gallery-img">
-            </div>
+    <section class="container mt-5" id="gallery">
+      <h2 class="section-title text-center">Bienvenidos!</h2>
+      <div class="gallery-container">
+        <div class="gallery-item">
+          <img src="images/sallad.jpg" alt="Sallad" class="gallery-img" loading="lazy">
         </div>
-    </div>
-<!-- Om oss Sektion -->
-<div class="about-section text-center py-5" id="about">
-    <div class="container">
+        <div class="gallery-item">
+          <img src="images/churasco.jpg" alt="Churasco" class="gallery-img" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="images/globio.jpg" alt="Lobio" class="gallery-img" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="images/khachapuri.jpg" alt="Khachapuri" class="gallery-img" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="images/amigo.png" alt="Amigo" class="gallery-img" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="images/sofia.jpg" alt="Sofia" class="gallery-img" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Om oss sektion -->
+    <section class="about-section text-center py-5" id="about">
+      <div class="container">
         <h2 class="section-title">Om oss</h2>
         <div class="row align-items-center">
-            <div class="col-md-6">
-                <img src="restaurang.jpg" alt="Restaurangbild" class="about-img img-fluid">
-            </div>
-            <div class="col-md-6 text-light">
-                <h3>Vår historia</h3>
-                <p> 
-                    Välkommen till Amigo’s Café & Salladsbar i hjärtat av Gamla Stan, Eskilstuna! Vi är ett familjeägt 
-                    café som brinner för färska, smakrika och hemlagade rätter med inspiration från Georgien, Spanien och Chile.
-                </p>
-                <h3>Ägarna</h3>
-                <p>
-                    Amigo’s drivs av Sofia från Georgien och Franco från Chile 
-                    – två matälskare med en gemensam dröm: att skapa en plats där god mat och trivsam atmosfär står i centrum.
-                </p>
-            </div>
+          <div class="col-md-6">
+            <img src="images/restaurang.jpg" alt="Restaurangbild" class="about-img img-fluid" loading="lazy">
+          </div>
+          <div class="col-md-6 text-light text-start">
+            <h3>Vår historia</h3>
+            <p>
+              Välkommen till Amigo’s Café & Salladsbar i hjärtat av Gamla Stan, Eskilstuna! Vi är ett familjeägt café som brinner för färska, smakrika och hemlagade rätter med inspiration från Georgien, Spanien och Chile.
+            </p>
+            <h3>Ägarna</h3>
+            <p>
+              Amigo’s drivs av Sofia från Georgien och Franco från Chile – två matälskare med en gemensam dröm: att skapa en plats där god mat och trivsam atmosfär står i centrum.
+            </p>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
+    </section>
 
-<!-- Footer Sektion (med Kontakt) -->
-<footer class="footer" id="contact">
+    <!-- Kontakt och Öppettider -->
+    <section class="container text-center mt-5" id="contact">
+      <div class="row">
+        <!-- Kontaktinformation -->
+        <div class="col-md-4">
+          <h3>Amigo's Café</h3>
+          <p><strong>Adress:</strong><br>Köpmangatan 52, Eskilstuna</p>
+          <p><strong>Telefon:</strong><br>
+            <a href="tel:+46701234567">0701234567</a>
+          </p>
+          <p><strong>E-post:</strong><br>
+            <a href="mailto:amigo.bardecopas@gmail.com">amigo.bardecopas@gmail.com</a>
+          </p>
+          <p><strong>Följ oss på sociala medier:</strong></p>
+          <a href="https://www.instagram.com/amigosbardecopas" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="images/instagram-white.png" alt="Instagram" class="social-icon" loading="lazy">
+          </a>
+          <p class="social-username">@amigosbardecopas</p>
+        </div>
+        <!-- Öppettider -->
+        <div class="col-md-4">
+          <h3>Öppettider</h3>
+          <p><strong>Mån - Tor:</strong> 09:00 - 18:00</p>
+          <p><strong>Fredag:</strong> 08:00 - 21:00</p>
+          <p><strong>Lördag:</strong> 11:00 - 21:00</p>
+          <p><strong>Söndag:</strong> Stängt</p>
+        </div>
+        <!-- Karta -->
+        <div class="col-md-4">
+          <h3>Hitta hit</h3>
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2032.8889067738126!2d16.5196841!3d59.368193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465ef3001242e415%3A0x66e831ef10ec7753!2zQW1pZ2_igJlzIENhZsOpIFNhbGxhZHMgQmFy!5e0!3m2!1ssv!2sse!4v1738442742323!5m2!1ssv!2sse" 
+              width="100%" 
+              height="250" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer text-center">
     <div class="container">
-        <div class="row">
-            <!-- Kontakt -->
-            <div class="col-md-4">
-                <h3>Amigo's Café</h3>
-                <p><strong>Adress:</strong><br>Köpmangatan 52, Eskilstuna</p>
-                <p><strong>Telefon:</strong><br> 
-                    <a href="tel:+46701234567">0701234567</a>
-                </p>
-                <p><strong>E-post:</strong><br><a href="mailto:amigo.bardecopas@gmail.com">amigo.bardecopas@gmail.com</a></p>
-                <p><strong>Följ oss på sociala medier:</strong></p>
-                <a href="https://www.instagram.com/amigosbardecopas" target="_blank" class="social-link">
-                    <img src="instagram-white.png" alt="Instagram" class="social-icon">
-                </a>
-                <p class="social-username">@amigosbardecopas</p>
-            </div>
-            <div class="col-md-4">
-                <h3>Öppettider</h3>
-                <p><strong>Mån - Tor:</strong> 09:00 - 18:00</p>
-                <p><strong>Fredag:</strong> 08:00 - 21:00</p>
-                <p><strong>Lördag:</strong> 11:00 - 21:00</p>
-                <p><strong>Söndag:</strong> Stängt</p>
-            </div>
-            <div class="col-md-4">
-                <h3>Hitta hit</h3>
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2058.669901120525!2d16.51711748737222!3d59.36820850422184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465ef3001242e415%3A0x66e831ef10ec7753!2zQW1pZ2_igJlzIENhZsOpIFNhbGxhZHMgQmFy!5e0!3m2!1ssv!2sse!4v1738263360265!5m2!1ssv!2sse"
-                        width="100%" 
-                        height="250" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy">
-                    </iframe>
-                </div>
-            </div>
-        </div>
+      <p>&copy; 2025 Amigo's Café. Alla rättigheter förbehållna.</p>
     </div>
-    
-</footer>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </footer>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
