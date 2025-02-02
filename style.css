@@ -4,279 +4,203 @@
 /* === Grundläggande stil för hela sidan === */
 body {
     background-color: #f8f3f1; /* Ljusbeige bakgrund */
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', sans-serif; /* Sans-serif för god läsbarhet */
     color: #4a3f35; /* Mörkbrun textfärg */
-    text-align: center;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
+/* --- Retro heading-stil --- */
+h1, h2, h3, .navbar-brand {
+    font-family: 'Playfair Display', serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Ger en lätt retroeffekt */
+}
+
+#contact h3 {
+    text-align: left;
+    margin-left: 0; /* Om det behövs för att justera vänstermarginalen */
+}
 /* === Navigationsmeny === */
 .navbar {
-    background-color: #ffffff;
+    background: linear-gradient(90deg, #ffffff, #f2e6d9); /* Subtil retrogradient */
     padding: 15px 0;
     border-bottom: 2px solid #e0d6cf;
 }
 
 .navbar-brand {
-    font-family: 'Playfair Display', serif;
     font-size: 2rem;
     font-weight: 700;
-    color: #4a3f35 !important;
+    color: #d77a47 !important;
 }
 
 .navbar-nav .nav-link {
     font-size: 1.2rem;
     font-weight: 400;
-    color: #4a3f35 !important;
+    color: #d77a47 !important;
     margin-right: 20px;
     font-family: 'Inter', sans-serif;
+    transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
     text-decoration: underline;
+    color: #b85d30 !important;
 }
 
 .navbar-toggler {
     border: none;
 }
 
-/* === Fixad logotypstorlek === */
+/* === Logotyp === */
 .logo-img {
-    width: 180px; /* Standardstorlek */
-    max-width: 200px; /* Säkerställer att den inte blir för stor */
+    width: 180px;
+    max-width: 200px;
     height: auto;
     display: block;
     margin: 20px auto;
     border-radius: 50%;
+    border: 4px solid #d77a47; /* Vintage ram för logotypen */
 }
 
-/* === Menyboxar (fadead stil) === */
-.menu {
-    background-color: rgba(74, 63, 53, 0.85); /* Mörkbrun, men mer genomskinlig */
-    color: #F3EDEB; /* Ljus text */
-    padding: 30px;
-    border-radius: 10px;
-    margin: 40px auto;
-    max-width: 600px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Lättare skugga */
-}
-
-/* Meny-rubriker */
-.menu h3 {
-    color: #f5f2f1;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-/* Lista i menyn */
-.menu ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.menu li {
-    font-size: 18px;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Beskrivning av rätter */
-.menu .desc {
-    display: block;
-    font-size: 14px;
-    color: #ccc;
-}
-
-/* === Bildgalleri (Fixar bakgrund och layout) === */
+/* === Bildgalleri === */
 #gallery {
-    background-color: #4a3f35; /* Matchar menyns bakgrund */
-    color: #F3EDEB;
+    background: linear-gradient(135deg, #d77a47, #b85d30); /* Retroinspirerad gradient med spansk känsla */
+    color: #fff;
     padding: 60px 0;
     border-radius: 10px;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 40px auto; /* Extra vertikalt utrymme */
     text-align: center;
 }
-
-/* Titel på bildsektionen */
-#gallery h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #f5f2f1;
-    margin-bottom: 30px;
-}
-
-/* Bildgalleri - Fixad layout för dator */
+/* === Bildgalleri med CSS Columns (Masonry) === */
 .gallery-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 kolumner */
-    grid-template-rows: auto;
-    gap: 20px; /* Mellanrum mellan bilderna */
-    justify-content: center;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
+    column-count: 3;         /* Antal kolumner – justera vid behov */
+    column-gap: 20px;         /* Mellanrum mellan kolumnerna */
+    padding: 20px;
 }
 
-/* Specifik positionering av bilder */
-.gallery-item:nth-child(1) { grid-column: 1; grid-row: 1; }
-.gallery-item:nth-child(2) { grid-column: 2; grid-row: 1; }
-.gallery-item:nth-child(3) { grid-column: 3; grid-row: 1; }
-.gallery-item:nth-child(4) { grid-column: 1; grid-row: 2; }
-.gallery-item:nth-child(5) { 
-    grid-column: 2; 
-    grid-row: 2; 
-    justify-self: center; /* Centrerar loggan horisontellt */
-    align-self: center; /* Centrerar loggan vertikalt */
+/* Se till att varje galleriobjekt inte delas upp mellan kolumner */
+.gallery-item {
+    break-inside: avoid;      /* Hindrar att objektet delas upp */
+    margin-bottom: 20px;      /* Avstånd nedanför varje objekt */
+    width: 100%;
 }
-.gallery-item:nth-child(6) { grid-column: 3; grid-row: 2; }
 
-/* Justering av bilder */
+/* Bildernas stil kan behållas (eller justeras) */
 .gallery-img {
     width: 100%;
     height: auto;
     display: block;
     border-radius: 10px;
-}
-
-/* Anpassning för mobil */
-@media (max-width: 768px) {
-    .gallery-container {
-        grid-template-columns: 1fr; /* Endast en kolumn i mobilvy */
-    }
-}
-
-/* Bilder */
-.gallery-img {
-    width: 100%;
-    height: auto;
-    display: block;
     transition: transform 0.3s ease;
-    border-radius: 10px;
 }
 
-/* Effekt vid hover */
 .gallery-img:hover {
     transform: scale(1.05);
 }
 
 /* === Om oss-sektionen === */
 #about {
-    background: #4a3f35;
+    background: linear-gradient(135deg, #d77a47, #b85d30); /* Samma gradient för enhetlighet */
     color: #fff;
-    padding: 60px 0;
+    padding: 60px 20px;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 60px auto 40px auto;
     border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 }
-#about {
-    margin-top: 60px; /* Justerar avståndet ovanför "Om oss" */
-    margin-bottom: 40px; /* Separerar från footern */
-}
-/* Om oss-titlar */
+
 .about-section h3 {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #f5f2f1;
+    color: #fff;
     margin-bottom: 15px;
 }
 
-/* Om oss-text */
-.about-section p {
-    font-size: 1.2rem;
-    color: #f5f2f1;
-    line-height: 1.6;
-    padding: 0 10px;
-}
-
-/* Justering av bild */
 .about-img {
     width: 100%;
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border: 3px solid #fff; /* Ger en klassisk, retro ram */
 }
 
-/* === Footer (sidfot) === */
+/* === Öppettider-sektionen (om den används) === */
+.opening-hours {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.opening-hours h3 {
+    color: #d77a47;
+}
+
+/* === Google Maps === */
+.map-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #d77a47; /* Accent för kartan */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+}
+
+/* === Footer === */
 .footer {
-    background: #4a3f35;
+    background: linear-gradient(135deg, #d77a47, #b85d30); /* Samma gradient för konsekvens */
     color: #ffffff;
-    padding: 40px 0;
+    padding: 40px 20px;
     max-width: 1100px;
     margin: 20px auto;
     border-radius: 10px;
     text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Stil för titlar i footern */
 .footer h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #f5f2f1;
-    margin-bottom: 15px;
 }
 
-/* Stil på vanlig text i footern */
 .footer p {
     font-size: 16px;
     margin-bottom: 8px;
 }
 
-/* Stil på länkar i footern */
 .footer a {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .footer a:hover {
     text-decoration: underline;
+    color: #b85d30;
 }
 
-/* === Sociala medier sektion === */
-.social-link {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
+/* === Retroaccenter för löpande text och listor === */
+p, li {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    text-align: left;
+    margin: 0 auto 15px auto;
+    max-width: 800px;
 }
 
-.social-icon {
-    width: 40px;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-    transition: transform 0.3s ease;
-}
-
-.social-icon:hover {
-    transform: scale(1.1);
-}
-
-.social-username {
-    font-size: 16px;
-    text-align: center;
-    margin-top: 5px;
-    color: white;
-    font-weight: bold;
-}
-
-/* === Responsiv Design (Mobilanpassning) === */
+/* === Responsiv Design === */
 @media (max-width: 768px) {
-    .navbar-brand {
-        font-size: 1.8rem;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 1rem;
-        margin-right: 10px;
-    }
-
-    /* Justera logotypstorleken */
-    .logo-img {
-        width: 140px;
-        max-width: 160px;
-    }
-
-    .menu-img {
-        max-width: 90%;
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     #about, .footer {
@@ -286,5 +210,23 @@ body {
 
     .about-img {
         margin-bottom: 20px;
+    }
+}
+.social-icon {
+    float: left;         /* Flyttar loggan åt vänster */
+    width: 40px;      /* Justera bredden efter behov */
+    height: auto;     /* Behåller bildens proportioner */
+    max-width: 100%;  /* Säkerställer att bilden inte sträcker sig utanför sin container */
+}
+
+@media (max-width: 768px) {
+    .gallery-container {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        column-count: 1;
     }
 }
